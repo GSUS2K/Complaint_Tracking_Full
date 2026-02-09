@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html id="htmlbg">
+    <head>
+        <title>
+            Online Complaint Tracker
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="bdbg">
+        <div id="frslyr">
+        <span><h1 id="cmptrk">Complaint/ Issue Tracker</h1><button id="uspl" onclick="window.location.href='/'">User Portal</button><button onclick="window.location.href='admin.html'" id="adpl">Admin DB</button></span>
+        </div>
+        <div id="sndlyr">
+            <h2 id="addb">Admin Dashboard</h2>
+            <div id ="stats"><div id="tcdiv"><p id="tc">Total Complaints</p><p id="tcval"></p></div><div id="pndiv"><p id="pn">Pending</p><p id="pnval"></p></div><div id="rsdiv"><p id="rs">Resolved</p><p id="rsval"></p></div><div id="rjdiv"><p id="rj">Rejected</p><p id="rjval"></p></div><button type="button" id="upsts" onclick="updateStats()">Update Stats</button></div>
+        </div>
+<br><br>
+        <div id="flrdiv">
+            <input type="text" id="txtflr" placeholder="Search by ID in the format 'IS-xxx'" oninput="flrJson()">
+            <button id="alflr" onclick="allJson()" type="button">All</button><button type="button" onclick="pnJson()" value="pending" id="pnflr">Pending</button><button type="button" value="resolved" onclick="rnJson()" id="rnflr">Resolved</button><button type="button" value="rejected" onclick="rjJson()" id="rjflr">Rejected</button>
+        </div>
+        
+        <div id="jsonct"></div>
+
+        <script src="./script.js">
+        </script>
+    </body>
+</html>

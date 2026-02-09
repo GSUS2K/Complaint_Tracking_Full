@@ -1,0 +1,42 @@
+[
+    {
+    "id": "IS-001",
+    "name": "Uzar",
+    "title": "Disconnection",
+    "description": "Wi-Fi automatically disconnects every hour",
+    "status": "pending",
+    "e_mail":"uzar123@gmail.com"
+    },
+    {
+    "id": "IS-002",
+    "name": "Frie",
+    "title": "Latency",
+    "description": "Ping of the connection is very high",
+    "status": "resolved",
+    "e_mail":"frie.st@hotmail.com"
+    },
+    {
+    "id": "IS-003",
+    "name": "Lars",
+    "title": "Cable cut",
+    "description": "Cable connection to router got twisted open",
+    "status": "rejected",
+    "e_mail":"notlars@yahoo.com"
+    },
+    {
+    "id": "IS-004",
+    "name": "Yarx",
+    "title": "LAN connection",
+    "description": "Not able to setup LAN with the Wi-Fi router provided",
+    "status": "pending",
+    "e_mail":"yar.x@icloud.com"
+    },
+    {
+    "id": "IS-005",
+    "name": "Nain",
+    "title": "Network speed",
+    "description": "Wi-Fi speed is 10x less than what I paid for",
+    "status": "resolved",
+    "e_mail": "nain1995@gmail.com"
+    }
+]

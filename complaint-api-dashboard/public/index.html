@@ -1,0 +1,79 @@
+<!-- Objective
+To build a basic full-stack web application using HTML, CSS, JavaScript, Node.js, and Express.js without using any
+database.
+Problem Statement
+Design and develop a web-based Online Complaint / Issue Tracker System where users can submit complaints and
+an admin can manage them. Complaints must be stored using in-memory data structures.
+Technology Stack
+Frontend: HTML, CSS, JavaScript
+Backend: Node.js, Express.js
+Database: Not allowed
+Functional Requirements
+User Module
+• Submit complaint
+• Auto-generated complaint ID
+• Status set to pending
+Admin Module
+• View all complaints
+• Update status (pending / resolved / rejected)
+• Delete complaint
+Mandatory API Routes
+GET /complaints – Get all complaints
+GET /complaints/:id – Get complaint by ID
+POST /complaints – Add complaint
+PUT /complaints/:id – Update complaint status
+DELETE /complaints/:id – Delete complaint
+Folder Structure
+complaint-tracker/
+server.js
+package.json
+public/
+index.html
+admin.html
+style.css
+script.js
+Rules & Constraints
+• No database allowed
+• No frontend frameworks
+• Only Vanilla JavaScript -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Online Complaint Tracker
+        </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body id="bdbg">
+        <div id="frslyr">
+        <span><h1 id="cmptrk">Complaint/ Issue Tracker</h1><button id="uspl" onclick="window.location.href=''">User Portal</button><button onclick="window.location.href='admin.html'" id="adpl">Admin DB</button></span>
+        </div>
+        <h2 id="uspt">User Portal</h2>
+        <form id="cmpbox">
+            <br>
+            <h2 id="sac">Submit a Complaint</h2>
+            <h3 id="sacd">You will receive an ID to track your complaint after submission.</h3><br>
+            <label for="nmeinp">Name *</label><br>
+            <input id="nmeinp" name="nmeinp" type="text" placeholder="Enter your name..." required><br><br>
+            <label for="ttlinp" id="ttlbl">Title *</label><br>
+            <select id="ttlinp" name="ttlinp" required>
+                <option value="Cable cut">Cable cut</option>
+                <option value="LAN connection">LAN connection</option>
+                <option value="Disconnection">Disconnection</option>
+                <option value="Latency">Latency</option>
+                <option value="Router problem">Router problem</option>
+                <option value="Network speed">Network speed</option>
+                <option value="Other">Other</option></select>
+                <br><br>
+            <label for="descinp">Description *</label><br>
+            <input id="descinp" name="descinp" type="text" placeholder="Describe the issue..." required><br><br>
+            <label for="emlinp">E-Mail *</label><br>
+            <input type="email" id="emlinp" name="emlinp" type="text" placeholder="Enter your e-mail address..." required><br><br>
+            <button id="sbmt" type="submit" disabled>Submit</button>
+            <p id="sbmd"></p>
+        </form>
+
+        <script type="module" src="./script.js"></script>
+    </body>
+</html>
