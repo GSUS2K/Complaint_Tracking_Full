@@ -124,12 +124,9 @@ app.put('/complaints/:id', (req,res)=>{
 
     console.log("id:"+id)
 
-    // console.log("hi"+req.body.status)
-
     complaints = complaints.map(c => c.id == id ? {
         ...c,
         status: req.body.status
-        // status: "resolved"
     } : c)
 
     updatedFile();
@@ -142,8 +139,6 @@ app.put('/complaints/:id', (req,res)=>{
 app.delete('/complaints/:id', (req,res)=>{
 
     console.log("-------------------------------------------------------------------------------------------")
-
-    console.log(req.params.id)
 
     complaints = complaints.filter(c => c.id != req.params.id)
 
