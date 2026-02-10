@@ -1,5 +1,6 @@
 
 const form = document.getElementById('cmpbox');
+
 form.addEventListener("change", () => {
     document.getElementById('sbmt').disabled = !form.checkValidity()
 });
@@ -64,9 +65,9 @@ async function updateStats(){
                 let data = await response.json();
 
                 console.log(data.length)
-// window.onload = function(){
+
                 document.getElementById('tcval').innerHTML = data.length;
-// }
+
     let rnData = data.filter(c => c.status == 'resolved')
 
         document.getElementById('rsval').innerHTML = rnData.length;
@@ -99,8 +100,8 @@ const myNode = document.getElementById("jsonct");
   }
 
 let jsonLen = data.length;
+
 let i=0;
-// let idName="";
 
 while(i<jsonLen)
 {
@@ -116,8 +117,6 @@ var iDiv = document.createElement('div');
 
     iDiv.id = 'block'+i;
     iDiv.className = 'block';
-    // iDiv.append(data[i].id);
-    // iDiv.append(data[i].name);
 
 var idsts = document.createElement('div');
 var idp = document.createElement('p');
@@ -288,21 +287,10 @@ setrs.append('Set Resolved')
 setrj.append('Set Rejected')
 dlt.append('DEL')
 
-// dlt.onclick = alert('hi')
-
-// let idName=""
-
-// console.log(document.getElementById("dlt"+i).value);
-
-// dlt.onclick = function () {
-
-// }
-
     document.getElementById('jsonct').appendChild(iDiv);
     document.getElementById('block'+i).appendChild(idsts);
     document.getElementById('idsts'+i).appendChild(idp);
     document.getElementById('idsts'+i).appendChild(stp);
-    // document.getElementById('block'+i).appendChild(gap);
     document.getElementById('block'+i).appendChild(nmel);
     document.getElementById('nmel'+i).appendChild(nmep);
     document.getElementById('nmel'+i).appendChild(emlp);
@@ -318,30 +306,6 @@ dlt.append('DEL')
     document.getElementById('btns'+i).appendChild(setrj);
     document.getElementById('btns'+i).appendChild(dlt);
 
-//         if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-
-// if(data[i].status=='pending')
-// {
-// document.getElementById("setpn").disabled = true;
-// }
-// else if(data[i].status=='resolved')
-// {
-// document.getElementById("setrs").disabled = true;
-// }
-// else{
-// document.getElementById("setrj").disabled = true;
-// }
-
 (function(pnVal){
         setpn.addEventListener("click", function() {
         fetch(`/complaints/${pnVal}`, {
@@ -350,9 +314,7 @@ dlt.append('DEL')
                   body: JSON.stringify({status: "pending"})
             }).then(response => response.json())
             document.getElementById('alflr').click()
-            // document.getElementById('upsts').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -365,7 +327,6 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('alflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -378,45 +339,19 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('alflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-        // (document.getElementById("dlt"+i).onclick = function() {
             console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
             document.getElementById('alflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);
-
-    // (function(value){
-    //     newLi.addEventListener("click", function() {
-    //        alert(value);
-    //     }, false);})(data[i]);
-    // }
-
-//     document.getElementById("dlt"+i).onclick = function () {
-//     if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-//     fetch(`/complaints/${idName}`, {
-//         method: 'DELETE'
-//     }).then(response => response.json())
-// }
 
     i++;
 
@@ -461,8 +396,6 @@ var iDiv = document.createElement('div');
 
     iDiv.id = 'block'+i;
     iDiv.className = 'block';
-    // iDiv.append(data[i].id);
-    // iDiv.append(data[i].name);
 
 var idsts = document.createElement('div');
 var idp = document.createElement('p');
@@ -633,21 +566,10 @@ setrs.append('Set Resolved')
 setrj.append('Set Rejected')
 dlt.append('DEL')
 
-// dlt.onclick = alert('hi')
-
-// let idName=""
-
-// console.log(document.getElementById("dlt"+i).value);
-
-// dlt.onclick = function () {
-
-// }
-
     document.getElementById('jsonct').appendChild(iDiv);
     document.getElementById('block'+i).appendChild(idsts);
     document.getElementById('idsts'+i).appendChild(idp);
     document.getElementById('idsts'+i).appendChild(stp);
-    // document.getElementById('block'+i).appendChild(gap);
     document.getElementById('block'+i).appendChild(nmel);
     document.getElementById('nmel'+i).appendChild(nmep);
     document.getElementById('nmel'+i).appendChild(emlp);
@@ -663,30 +585,6 @@ dlt.append('DEL')
     document.getElementById('btns'+i).appendChild(setrj);
     document.getElementById('btns'+i).appendChild(dlt);
 
-//         if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-
-// if(data[i].status=='pending')
-// {
-// document.getElementById("setpn").disabled = true;
-// }
-// else if(data[i].status=='resolved')
-// {
-// document.getElementById("setrs").disabled = true;
-// }
-// else{
-// document.getElementById("setrj").disabled = true;
-// }
-
 (function(pnVal){
         setpn.addEventListener("click", function() {
         fetch(`/complaints/${pnVal}`, {
@@ -695,9 +593,7 @@ dlt.append('DEL')
                   body: JSON.stringify({status: "pending"})
             }).then(response => response.json())
             flrJson()
-            // document.getElementById('upsts').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -710,7 +606,6 @@ dlt.append('DEL')
             }).then(response => response.json())
             flrJson()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -723,45 +618,19 @@ dlt.append('DEL')
             }).then(response => response.json())
             flrJson()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-        // (document.getElementById("dlt"+i).onclick = function() {
             console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
             flrJson()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);
-
-    // (function(value){
-    //     newLi.addEventListener("click", function() {
-    //        alert(value);
-    //     }, false);})(data[i]);
-    // }
-
-//     document.getElementById("dlt"+i).onclick = function () {
-//     if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-//     fetch(`/complaints/${idName}`, {
-//         method: 'DELETE'
-//     }).then(response => response.json())
-// }
 
     i++;
 
@@ -808,8 +677,6 @@ var iDiv = document.createElement('div');
 
     iDiv.id = 'block'+i;
     iDiv.className = 'block';
-    // iDiv.append(data[i].id);
-    // iDiv.append(data[i].name);
 
 var idsts = document.createElement('div');
 var idp = document.createElement('p');
@@ -980,21 +847,10 @@ setrs.append('Set Resolved')
 setrj.append('Set Rejected')
 dlt.append('DEL')
 
-// dlt.onclick = alert('hi')
-
-// let idName=""
-
-// console.log(document.getElementById("dlt"+i).value);
-
-// dlt.onclick = function () {
-
-// }
-
     document.getElementById('jsonct').appendChild(iDiv);
     document.getElementById('block'+i).appendChild(idsts);
     document.getElementById('idsts'+i).appendChild(idp);
     document.getElementById('idsts'+i).appendChild(stp);
-    // document.getElementById('block'+i).appendChild(gap);
     document.getElementById('block'+i).appendChild(nmel);
     document.getElementById('nmel'+i).appendChild(nmep);
     document.getElementById('nmel'+i).appendChild(emlp);
@@ -1010,30 +866,6 @@ dlt.append('DEL')
     document.getElementById('btns'+i).appendChild(setrj);
     document.getElementById('btns'+i).appendChild(dlt);
 
-//         if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-
-// if(data[i].status=='pending')
-// {
-// document.getElementById("setpn").disabled = true;
-// }
-// else if(data[i].status=='resolved')
-// {
-// document.getElementById("setrs").disabled = true;
-// }
-// else{
-// document.getElementById("setrj").disabled = true;
-// }
-
 (function(pnVal){
         setpn.addEventListener("click", function() {
         fetch(`/complaints/${pnVal}`, {
@@ -1042,9 +874,7 @@ dlt.append('DEL')
                   body: JSON.stringify({status: "pending"})
             }).then(response => response.json())
             document.getElementById('rnflr').click()
-            // document.getElementById('upsts').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1057,7 +887,6 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('rnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1070,45 +899,19 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('rnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-        // (document.getElementById("dlt"+i).onclick = function() {
             console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
             document.getElementById('rnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);
-
-    // (function(value){
-    //     newLi.addEventListener("click", function() {
-    //        alert(value);
-    //     }, false);})(data[i]);
-    // }
-
-//     document.getElementById("dlt"+i).onclick = function () {
-//     if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-//     fetch(`/complaints/${idName}`, {
-//         method: 'DELETE'
-//     }).then(response => response.json())
-// }
 
     i++;
 
@@ -1127,6 +930,7 @@ async function rjJson(){
                 console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
+
   while (myNode.firstChild) {
     myNode.removeChild(myNode.lastChild);
   }
@@ -1156,8 +960,6 @@ var iDiv = document.createElement('div');
 
     iDiv.id = 'block'+i;
     iDiv.className = 'block';
-    // iDiv.append(data[i].id);
-    // iDiv.append(data[i].name);
 
 var idsts = document.createElement('div');
 var idp = document.createElement('p');
@@ -1328,21 +1130,10 @@ setrs.append('Set Resolved')
 setrj.append('Set Rejected')
 dlt.append('DEL')
 
-// dlt.onclick = alert('hi')
-
-// let idName=""
-
-// console.log(document.getElementById("dlt"+i).value);
-
-// dlt.onclick = function () {
-
-// }
-
     document.getElementById('jsonct').appendChild(iDiv);
     document.getElementById('block'+i).appendChild(idsts);
     document.getElementById('idsts'+i).appendChild(idp);
     document.getElementById('idsts'+i).appendChild(stp);
-    // document.getElementById('block'+i).appendChild(gap);
     document.getElementById('block'+i).appendChild(nmel);
     document.getElementById('nmel'+i).appendChild(nmep);
     document.getElementById('nmel'+i).appendChild(emlp);
@@ -1358,30 +1149,6 @@ dlt.append('DEL')
     document.getElementById('btns'+i).appendChild(setrj);
     document.getElementById('btns'+i).appendChild(dlt);
 
-//         if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-
-// if(data[i].status=='pending')
-// {
-// document.getElementById("setpn").disabled = true;
-// }
-// else if(data[i].status=='resolved')
-// {
-// document.getElementById("setrs").disabled = true;
-// }
-// else{
-// document.getElementById("setrj").disabled = true;
-// }
-
 (function(pnVal){
         setpn.addEventListener("click", function() {
         fetch(`/complaints/${pnVal}`, {
@@ -1390,9 +1157,7 @@ dlt.append('DEL')
                   body: JSON.stringify({status: "pending"})
             }).then(response => response.json())
             document.getElementById('rjflr').click()
-            // document.getElementById('upsts').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1405,7 +1170,6 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('rjflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1418,45 +1182,19 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('rjflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-        // (document.getElementById("dlt"+i).onclick = function() {
             console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
             document.getElementById('rjflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);
-
-    // (function(value){
-    //     newLi.addEventListener("click", function() {
-    //        alert(value);
-    //     }, false);})(data[i]);
-    // }
-
-//     document.getElementById("dlt"+i).onclick = function () {
-//     if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-//     fetch(`/complaints/${idName}`, {
-//         method: 'DELETE'
-//     }).then(response => response.json())
-// }
 
     i++;
 
@@ -1503,8 +1241,6 @@ var iDiv = document.createElement('div');
 
     iDiv.id = 'block'+i;
     iDiv.className = 'block';
-    // iDiv.append(data[i].id);
-    // iDiv.append(data[i].name);
 
 var idsts = document.createElement('div');
 var idp = document.createElement('p');
@@ -1675,21 +1411,10 @@ setrs.append('Set Resolved')
 setrj.append('Set Rejected')
 dlt.append('DEL')
 
-// dlt.onclick = alert('hi')
-
-// let idName=""
-
-// console.log(document.getElementById("dlt"+i).value);
-
-// dlt.onclick = function () {
-
-// }
-
     document.getElementById('jsonct').appendChild(iDiv);
     document.getElementById('block'+i).appendChild(idsts);
     document.getElementById('idsts'+i).appendChild(idp);
     document.getElementById('idsts'+i).appendChild(stp);
-    // document.getElementById('block'+i).appendChild(gap);
     document.getElementById('block'+i).appendChild(nmel);
     document.getElementById('nmel'+i).appendChild(nmep);
     document.getElementById('nmel'+i).appendChild(emlp);
@@ -1705,30 +1430,6 @@ dlt.append('DEL')
     document.getElementById('btns'+i).appendChild(setrj);
     document.getElementById('btns'+i).appendChild(dlt);
 
-//         if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-
-// if(data[i].status=='pending')
-// {
-// document.getElementById("setpn").disabled = true;
-// }
-// else if(data[i].status=='resolved')
-// {
-// document.getElementById("setrs").disabled = true;
-// }
-// else{
-// document.getElementById("setrj").disabled = true;
-// }
-
 (function(pnVal){
         setpn.addEventListener("click", function() {
         fetch(`/complaints/${pnVal}`, {
@@ -1737,9 +1438,7 @@ dlt.append('DEL')
                   body: JSON.stringify({status: "pending"})
             }).then(response => response.json())
             document.getElementById('pnflr').click()
-            // document.getElementById('upsts').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1752,7 +1451,6 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('pnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
@@ -1765,45 +1463,19 @@ dlt.append('DEL')
             }).then(response => response.json())
             document.getElementById('pnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);;
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-        // (document.getElementById("dlt"+i).onclick = function() {
             console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
             document.getElementById('pnflr').click()
             updateStats();
-            // console.log("hi")
         }, false);
     })(data[i].id);
-
-    // (function(value){
-    //     newLi.addEventListener("click", function() {
-    //        alert(value);
-    //     }, false);})(data[i]);
-    // }
-
-//     document.getElementById("dlt"+i).onclick = function () {
-//     if(i<10)
-// {
-//     idName= "IS-00"+(i+1);
-// }
-// else if(i<100)
-// {
-//     idName= "IS-0"+(i+1);
-// }
-// else{
-//     idName= "IS-"+(i+1);
-// }
-//     fetch(`/complaints/${idName}`, {
-//         method: 'DELETE'
-//     }).then(response => response.json())
-// }
 
     i++;
 
