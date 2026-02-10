@@ -2,7 +2,7 @@ Complete backend and frontend of complaint management system made with Vanilla J
 
 Prereq: Node.js and express.js
 
-<!-- Objective
+Objective
 To build a basic full-stack web application using HTML, CSS, JavaScript, Node.js, and Express.js without using any
 database.
 Problem Statement
@@ -39,4 +39,4 @@ script.js
 Rules & Constraints
 • No database allowed
 • No frontend frameworks
-• Only Vanilla JavaScript -->
+• Only Vanilla JavaScript
