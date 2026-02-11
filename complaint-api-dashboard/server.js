@@ -44,7 +44,7 @@ stream.on('data', (chunk)=>{
 
 function updatedFile() {
 
-        const newstream = fs.createWriteStream("./complaints_updated.json",[{}]);
+        const newstream = fs.createWriteStream("./complaints.json",[{}]);
 
         let complaintsJson = JSON.stringify(complaints);
 
