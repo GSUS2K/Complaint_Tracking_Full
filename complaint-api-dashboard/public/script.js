@@ -22,7 +22,29 @@ myForm.addEventListener('submit', function() {
 
     event.preventDefault();
 
+            const respo2 = await fetch("/complaints");
+
+                const newData2 = await respo2.json();
+
+                const complID2 = newData2[newData2.length-1].id;
+
+                const lastId = Number(complID2.substring(3)) + 1;
+
+                // console.log("lastID: "+lastId)
+
     const formData = new FormData(myForm);
+
+    if(lastId<10)
+{
+    formData.append("id",`IS-00${lastId}`)
+}
+else if(lastId<100)
+{
+    formData.append("id",`IS-0${lastId}`)
+}
+else{
+    formData.append("id",`IS-${lastId}`)
+}
     
     const data = Object.fromEntries(formData.entries());
 
@@ -64,7 +86,7 @@ async function updateStats(){
 
                 let data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
                 document.getElementById('tcval').innerHTML = data.length;
 
@@ -72,7 +94,7 @@ async function updateStats(){
 
         document.getElementById('rsval').innerHTML = rnData.length;
 
-                console.log(rnData.length)
+                // console.log(rnData.length)
 
     let rjData = data.filter(c => c.status == 'rejected')
 
@@ -92,7 +114,7 @@ async function allJson(){
 
                 const data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
   while (myNode.firstChild) {
@@ -106,12 +128,12 @@ let i=0;
 while(i<jsonLen)
 {
 
-console.log(data[i].id)
-console.log(data[i].status)
-console.log(data[i].title)
-console.log(data[i].name)
-console.log(data[i].e_mail)
-console.log(data[i].description)
+// console.log(data[i].id)
+// console.log(data[i].status)
+// console.log(data[i].title)
+// console.log(data[i].name)
+// console.log(data[i].e_mail)
+// console.log(data[i].description)
 
 var iDiv = document.createElement('div');
 
@@ -344,7 +366,7 @@ dlt.append('DEL')
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-            console.log("ID: "+dltVal)
+            // console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
@@ -365,7 +387,7 @@ async function flrJson(){
 
                 let data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
   while (myNode.firstChild) {
@@ -377,7 +399,7 @@ const myNode = document.getElementById("jsonct");
     data = data.filter(c => c.id.includes(textFilter))
 
 let jsonLen = data.length;
-console.log('length: '+jsonLen)
+// console.log('length: '+jsonLen)
     console.log('--------- Search Filtered Data ---------')
 
 let i=0;
@@ -385,12 +407,12 @@ let i=0;
 while(i<jsonLen)
 {
 
-console.log(data[i].id)
-console.log(data[i].status)
-console.log(data[i].title)
-console.log(data[i].name)
-console.log(data[i].e_mail)
-console.log(data[i].description)
+// console.log(data[i].id)
+// console.log(data[i].status)
+// console.log(data[i].title)
+// console.log(data[i].name)
+// console.log(data[i].e_mail)
+// console.log(data[i].description)
 
 var iDiv = document.createElement('div');
 
@@ -623,7 +645,7 @@ dlt.append('DEL')
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-            console.log("ID: "+dltVal)
+            // console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
@@ -647,7 +669,7 @@ async function rnJson(){
 
                 let data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
   while (myNode.firstChild) {
@@ -659,19 +681,19 @@ const myNode = document.getElementById("jsonct");
     data = data.filter(c => c.status == rnFilter)
 
 let jsonLen = data.length;
-console.log('length: '+jsonLen)
+// console.log('length: '+jsonLen)
 let i=0;
     console.log('--------- Resolved Filtered Data ---------')
 
 while(i<jsonLen)
 {
 
-console.log(data[i].id)
-console.log(data[i].status)
-console.log(data[i].title)
-console.log(data[i].name)
-console.log(data[i].e_mail)
-console.log(data[i].description)
+// console.log(data[i].id)
+// console.log(data[i].status)
+// console.log(data[i].title)
+// console.log(data[i].name)
+// console.log(data[i].e_mail)
+// console.log(data[i].description)
 
 var iDiv = document.createElement('div');
 
@@ -904,7 +926,7 @@ dlt.append('DEL')
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-            console.log("ID: "+dltVal)
+            // console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
@@ -927,7 +949,7 @@ async function rjJson(){
 
                 let data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
 
@@ -940,7 +962,7 @@ const myNode = document.getElementById("jsonct");
     data = data.filter(c => c.status == rjFilter)
 
 let jsonLen = data.length;
-console.log('length: '+jsonLen)
+// console.log('length: '+jsonLen)
 
     console.log('--------- Rejected Filtered Data ---------')
 
@@ -949,12 +971,12 @@ let i=0;
 while(i<jsonLen)
 {
 
-console.log(data[i].id)
-console.log(data[i].status)
-console.log(data[i].title)
-console.log(data[i].name)
-console.log(data[i].e_mail)
-console.log(data[i].description)
+// console.log(data[i].id)
+// console.log(data[i].status)
+// console.log(data[i].title)
+// console.log(data[i].name)
+// console.log(data[i].e_mail)
+// console.log(data[i].description)
 
 var iDiv = document.createElement('div');
 
@@ -1187,7 +1209,7 @@ dlt.append('DEL')
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-            console.log("ID: "+dltVal)
+            // console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
@@ -1210,7 +1232,7 @@ async function pnJson(){
 
                 let data = await response.json();
 
-                console.log(data.length)
+                // console.log(data.length)
 
 const myNode = document.getElementById("jsonct");
   while (myNode.firstChild) {
@@ -1222,7 +1244,7 @@ const myNode = document.getElementById("jsonct");
     data = data.filter(c => c.status == pnFilter)
 
 let jsonLen = data.length;
-console.log('length: '+jsonLen)
+// console.log('length: '+jsonLen)
     console.log('--------- Pending Filtered Data ---------')
 
 let i=0;
@@ -1230,12 +1252,12 @@ let i=0;
 while(i<jsonLen)
 {
 
-console.log(data[i].id)
-console.log(data[i].status)
-console.log(data[i].title)
-console.log(data[i].name)
-console.log(data[i].e_mail)
-console.log(data[i].description)
+// console.log(data[i].id)
+// console.log(data[i].status)
+// console.log(data[i].title)
+// console.log(data[i].name)
+// console.log(data[i].e_mail)
+// console.log(data[i].description)
 
 var iDiv = document.createElement('div');
 
@@ -1468,7 +1490,7 @@ dlt.append('DEL')
 
     (function(dltVal){
         dlt.addEventListener("click", function() {
-            console.log("ID: "+dltVal)
+            // console.log("ID: "+dltVal)
             fetch(`/complaints/${dltVal}`, {
                 method: 'DELETE'
             }).then(response => response.json())
