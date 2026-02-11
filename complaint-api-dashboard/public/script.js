@@ -22,14 +22,19 @@ myForm.addEventListener('submit', function() {
 
     event.preventDefault();
 
-            const respo2 = await fetch("/complaints");
+           const respo2 = await fetch("/complaints");
 
                 const newData2 = await respo2.json();
 
+                let lastId = 0;
+
+        try{
                 const complID2 = newData2[newData2.length-1].id;
-
-                const lastId = Number(complID2.substring(3)) + 1;
-
+                lastId = Number(complID2.substring(3)) + 1;
+        }
+        catch(error){
+                    lastId= 1;
+        }
                 // console.log("lastID: "+lastId)
 
     const formData = new FormData(myForm);
