@@ -40,3 +40,8 @@ Rules & Constraints
 • No database allowed
 • No frontend frameworks
 • Only Vanilla JavaScript
+
+Left to do: 
+* ID notation doesn't auto-generate in postman. have to manually add in POST body. Can't find way to do cause the post api runs before I can create the custom ID generation.
+* Have to fix complaint generation where if new complaint is generated without page refresh, same complaint is created twice and so on.
+* Design of the UI is imperfect.
