@@ -16,9 +16,9 @@
             <h2 id="sac">Submit a Complaint</h2>
             <h3 id="sacd">You will receive an ID to track your complaint after submission.</h3><br>
             <label for="nmeinp">Name *</label><br>
-            <input id="nmeinp" name="nmeinp" type="text" placeholder="Enter your name..." required><br><br>
+            <input id="nmeinp" name="name" type="text" placeholder="Enter your name..." required><br><br>
             <label for="ttlinp" id="ttlbl">Title *</label><br>
-            <select id="ttlinp" name="ttlinp" required>
+            <select id="ttlinp" name="title" required>
                 <option value="Cable cut">Cable cut</option>
                 <option value="LAN connection">LAN connection</option>
                 <option value="Disconnection">Disconnection</option>
@@ -28,9 +28,9 @@
                 <option value="Other">Other</option></select>
                 <br><br>
             <label for="descinp">Description *</label><br>
-            <input id="descinp" name="descinp" type="text" placeholder="Describe the issue..." required><br><br>
+            <input id="descinp" name="description" type="text" placeholder="Describe the issue..." required><br><br>
             <label for="emlinp">E-Mail *</label><br>
-            <input type="email" id="emlinp" name="emlinp" type="text" placeholder="Enter your e-mail address..." required><br><br>
+            <input type="email" id="emlinp" name="e_mail" type="text" placeholder="Enter your e-mail address..." required><br><br>
             <button id="sbmt" type="submit" disabled>Submit</button>
             <p id="sbmd"></p>
         </form>
