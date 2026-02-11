@@ -19,9 +19,6 @@ const __dirname = dirname(__filename)
 
 let newCompl ={};
 
-let id=5;
-let idName="";
-
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/',express.static(path.join((__dirname),'/public')))
@@ -82,26 +79,13 @@ app.post('/complaints', (req,res)=>{
 
     console.log("-------------------------------------------------------------------------------------------")
 
-        id++;
-if(id<10)
-{
-    idName= "IS-00"+id;
-}
-else if(id<100)
-{
-    idName= "IS-0"+id;
-}
-else{
-    idName= "IS-"+id;
-}
-
     newCompl =
-        {"id": idName,
-        "name": req.body.nmeinp,
-        "title": req.body.ttlinp,
-        "description": req.body.descinp,
+        {"id": req.body.id,
+        "name": req.body.name,
+        "title": req.body.title,
+        "description": req.body.description,
         "status": "pending",
-        "e_mail": req.body.emlinp}
+        "e_mail": req.body.e_mail}
     
 
     complaints.push(newCompl);
@@ -151,4 +135,4 @@ app.delete('/complaints/:id', (req,res)=>{
 
 app.listen(3000, ()=> {
     console.log("http://localhost:3000 is running!")
-})
+});
